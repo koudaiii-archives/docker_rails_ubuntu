@@ -12,6 +12,9 @@ apt-get -y install libreadline-dev
 apt-get -y install build-essential
 aptitude install -y libssl-dev
 
+#for rubygems mysql2
+apt-get install libmysqlclient-dev
+
 #for capistrano zip
 apt-get -y install bzip2*
 apt-get -y install zlib-devel

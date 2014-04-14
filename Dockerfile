@@ -106,7 +106,8 @@ RUN /bin/sh /root/set_ruby.sh
 #######################################  Ruby  ########################################
 
 ADD deploy.sh /root/deploy.sh
-RUN chmod +x /root/deploy.sh
+ADD database.yml /root/database.yml
+RUN chmod +x /root/deploy.sh;chmod +x /root/database.yml
 RUN /bin/sh /root/deploy.sh
 
 #############
