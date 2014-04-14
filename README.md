@@ -1,6 +1,13 @@
-## Docker-Nginx-MySQL-Ubuntu12.04
+## Docker-Nginx-MySQL-Rails-Ubuntu12.04
 
 Nginx MySQL docker container recipe.
+
+Ruby 2.1.1
+Rails 4.0.1
+MySQL 5.5
+
+default user_name: koudaiii
+default       app: https://github.com/koudaiii/twitter-bootswatch-rails-demo.git
 
 
 ### Installation
@@ -11,7 +18,7 @@ Install [Docker](https://gist.github.com/koudaiii/10282062#file-docker_install).
 ### Usage
 In Host Machine
 
-    $ git clone https://github.com/koudaiii/docker_mysql_ubuntu.git
+    $ git clone https://github.com/koudaiii/docker_rails_ubuntu.git
 
 ### SSH-Key
 
@@ -32,11 +39,11 @@ Change dockerfile to your Document_ROOT
 
 Docker run
 
-    $ docker build -t user/mysql .
+    $ docker build -t user/rails .
 
 #### Attach persistent/shared directories
 
-    $ docker run -d -p 80 -p 22 -p 3306 -v koudaiii/mysql
+    $ docker run -d -p 80 -p 22 -p 3306 -v user/rails
 
     $ docker ps
 
@@ -49,6 +56,6 @@ Open `http://<host>` to see the welcome page.
 #### Attach Volume
 
     $ vim  ~/docker_mysql_ubuntu/Dockerfile
-        #VOL~~ Remove the comment out
+        #VOLUME ... #Remove the comment out
 
     $ docker run -d -p 80 -p 22 -p 3306 -v /var/log/nginx:/var/log/nginx -v /var/lib/mysql:/var/lib/mysql koudaiii/mysql
