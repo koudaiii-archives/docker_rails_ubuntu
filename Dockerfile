@@ -10,7 +10,7 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.original
 ADD ./sources.list /etc/apt/sources.list
 RUN apt-get clean
 RUN apt-get update
-RUN apt-get upgrade -y
+#RUN apt-get upgrade -y
 
 #Dev tools for all Docker
 RUN apt-get -y install git vim
