@@ -75,7 +75,9 @@ EXPOSE 80
 
 #######################################  Mysql  ########################################
 
-RUN apt-get install -y mysql-server mysql-client
+RUN echo mysql-server-5.5 mysql-server/root_password password "" | debconf-set-selections ; \
+    echo mysql-server-5.5 mysql-server/root_password_again password "" | debconf-set-selections ; \
+    apt-get install -y mysql-server mysql-client
 
 RUN rm -f /etc/mysql/my.cnf
 ADD my.cnf /etc/mysql/my.cnf
