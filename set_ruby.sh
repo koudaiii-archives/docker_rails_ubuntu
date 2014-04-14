@@ -1,16 +1,16 @@
 #!/bin/bash
 export PATH="/usr/local/bin:$PATH"
-apt-get -y install aptitude 
+#apt-get -y install aptitude 
 apt-get -y install imagemagick
 apt-get -y install libreadline-dev
-apt-get -y install libssl-dev
+#apt-get -y --purge　remove libssl1.0.0
+apt-get -y install libssl-dev=1.0.1-4ubuntu5.12
 apt-get -y install zlib1g-dev
-apt-get -y install libssl-dev
 apt-get -y install libssl1.0.0
 apt-get -y install git-core curl
 apt-get -y install libreadline-dev
 apt-get -y install build-essential
-aptitude install -y libssl-dev
+#aptitude install -y libssl-dev
 
 #for rubygems mysql2
 apt-get install libmysqlclient-dev
