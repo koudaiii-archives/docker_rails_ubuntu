@@ -100,10 +100,15 @@ EXPOSE 3306
 #######################################  Ruby  ########################################
 
 ADD set_ruby.sh /root/set_ruby.sh
-RUN chmod +x /root/set_ruby.sh
-RUN /bin/sh /root/set_ruby.sh
+ADD set_nvm.sh /root/set_nvm.sh 
 
-#######################################  Ruby  ########################################
+RUN chmod +x /root/set_ruby.sh; chmod +x /root/set_nvm.sh 
+RUN /bin/sh /root/set_ruby.sh
+RUN /bin/sh /root/set_nvm.sh
+
+RUN usermod -G koudaiii,rbenv,nvm koudaiii
+
+#######################################  Deployy  ########################################
 
 ADD deploy.sh /root/deploy.sh
 ADD database.yml /root/database.yml
@@ -111,9 +116,6 @@ RUN chmod +x /root/deploy.sh;chmod +x /root/database.yml
 RUN /bin/sh /root/deploy.sh
 
 #############
-
-
-
 # Supervisor
 CMD ["/usr/bin/supervisord"]
 

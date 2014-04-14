@@ -10,7 +10,7 @@ mysql_install_db --user mysql > /dev/null
 sleep 10s
 
 #Start mysqld 
-cd /usr ; /usr/bin/mysqld_safe &
+cd /usr ; /usr/bin/mysqld_safe &  > /dev/null
 #mysqld &
 
 sleep 10s
