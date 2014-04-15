@@ -45,7 +45,7 @@ if [ ! -d /usr/local/rbenv ];then
 
     # Setup rbenv for all user
     echo 'export RBENV_ROOT="/usr/local/rbenv"' >> /etc/profile.d/rbenv.sh
-    echo 'PATH=/usr/local/rbenv/bin:$PATH' >> /etc/profile.d/rbenv.sh
+    echo 'export PATH=/usr/local/rbenv/bin:$PATH' >> /etc/profile.d/rbenv.sh
     echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
 
     export RBENV_ROOT=/usr/local/rbenv

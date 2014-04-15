@@ -77,9 +77,7 @@ EXPOSE 80
 
 #######################################  Mysql  ########################################
 
-RUN echo mysql-server-5.5 mysql-server/root_password password "" | debconf-set-selections ; \
-    echo mysql-server-5.5 mysql-server/root_password_again password "" | debconf-set-selections ; \
-    apt-get install -y mysql-server mysql-client
+RUN apt-get install -y mysql-server mysql-client
 
 RUN rm -f /etc/mysql/my.cnf
 ADD my.cnf /etc/mysql/my.cnf
@@ -118,6 +116,13 @@ ADD deploy.sh /root/deploy.sh
 ADD database.yml /root/database.yml
 RUN chmod +x /root/deploy.sh;chmod +x /root/database.yml
 RUN /bin/sh /root/deploy.sh
+
+#puma run
+ADD pumarun /usr/local/bin/pumarun
+RUN chmod +x /usr/local/bin/pumarun
+
+CMD ["/usr/local/bin/pumarun"]
+
 
 #############
 # Supervisor
