@@ -3,17 +3,21 @@
 Nginx MySQL docker container recipe.
 
 Ruby 2.1.1
-Rails 4.0.1
+
+Rails 4.0.3
+
 MySQL 5.5
 
 default user_name: koudaiii
+
 default       app: https://github.com/koudaiii/twitter-bootswatch-rails-demo.git
 
 
 ### Installation
 
 Install [Docker](https://gist.github.com/koudaiii/10282062#file-docker_install).
-   [for mac](https://gist.github.com/koudaiii/10224422)
+
+Install [for mac](https://gist.github.com/koudaiii/10224422)
 
 ### Usage
 In Host Machine
