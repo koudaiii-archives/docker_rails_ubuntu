@@ -21,5 +21,7 @@ cp /root/database.yml /var/www/app/config/database.yml
 
 cd /var/www/app
 bundle install
-bundle exec rake db:create RAILS_ENV=production; bundle exec  rake db:migrate RAILS_ENV=production; bundle exec rake db:seed RAILS_ENV=production;
+bundle exec rake db:create RAILS_ENV=production; bundle exec  rake db:migrate RAILS_ENV=production; bundle exec rake db:seed RAILS_ENV=production; bundle exec rake assets:precompile RAILS_ENV=production
+bundle exec rake db:create RAILS_ENV=test; bundle exec  rake db:migrate RAILS_ENV=test; bundle exec rake spec RAILS_ENV=test
+
 bundle exec puma -e production -d -b unix:///var/run/app.sock -S /var/run/app.state
