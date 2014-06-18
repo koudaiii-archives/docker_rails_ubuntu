@@ -35,8 +35,8 @@ RUN useradd --create-home -s /bin/bash koudaiii ;\
 
 # Set .ssh
 RUN mkdir -p /home/koudaiii/.ssh;chown koudaiii /home/koudaiii/.ssh; chmod 700 /home/koudaiii/.ssh
-ADD ./authorized_keys /home/koudaiii/.ssh/authorized_keys
-RUN chown koudaiii /home/koudaiii/.ssh/authorized_keys;chmod 600 /home/koudaiii/.ssh/authorized_keys
+#ADD ./authorized_keys /home/koudaiii/.ssh/authorized_keys
+#RUN chown koudaiii /home/koudaiii/.ssh/authorized_keys;chmod 600 /home/koudaiii/.ssh/authorized_keys
 
 # setup sudoers
 RUN echo "koudaiii ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/koudaiii
