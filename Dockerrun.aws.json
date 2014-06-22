@@ -1,0 +1,5 @@
+{
+  "AWSEBDockerrunVersion": "1",
+    "Image" : { "Name" : "koudaiii/docker-rails-ubuntu:latest" },
+    "Ports" : [{ "ContainerPort": "80" }]
+}
