@@ -74,6 +74,14 @@ ADD ./nginx.conf /etc/nginx/nginx.conf
 # Expose ports.
 EXPOSE 80
 
+#######################################  Sendmail  ########################################
+RUN apt-get -y install sendmail
+
+#######################################  Qt ffmpeg  ########################################
+RUN git clone https://github.com/danielgtaylor/qtfaststart.git; cd qtfaststart; python setup.py install
+
+RUN apt-get -y install ffmpeg libavcodec53
+
 
 #######################################  Mysql  ########################################
 
